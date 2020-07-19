@@ -1,0 +1,252 @@
+/*
+ Theme Name:   Big Data Day LA Theme
+ Theme URI:    https://www.bigdatadayla.com
+ Description:  Big Data Day LA Theme child theme of vertoh
+ Author:       Archangel Technology Consultants LLC. dba Big Data Day LA
+ Author URI:   https://www.bigdatadayla.com
+ Template:     vertoh
+ Version:      3.0.0
+*/
+
+body { overflow-x: hidden; }
+.wpb_row { margin-bottom: 0px !important; }
+/* .wpb_wrapper p { padding: 10px 100px; } */
+.fullwidth h2 {font-size: 40px;
+  margin-bottom: 20px;
+  text-transform: uppercase; margin-top: 30px;}
+.side_padding_50 { padding: 0 50px; }
+
+header.header .site-logo a, header.header.transparent.shrink .site-logo a, header.header.transparent.shrink .site-logo.white {
+  width: 273px !important;
+  height: 55px !important;
+}
+header.header.fat { padding: 5px 0px !important; }
+.sponsor_tier h3 { margin-bottom: 0px !important; padding: 10px 0px; border-bottom: 1px solid #3c81d5; border-top: 1px solid #3c81d5; padding-left: 20px; }
+.sponsor_tier h3 .fa-trophy {  background: #3466b3;
+  padding: 10px;
+  color: #fff;
+  margin-right: 10px;
+  border-radius: 15px;}
+.sponsor_tier .col-md-12 { padding: 0px; }
+.section_header { 
+  margin-top:1em;
+  border:0;
+  /* margin: 30px 100px 10px 100px;  */
+}
+.section_header td{border:0;}
+.section_header h2{ font-size:30px; margin: 0px;}
+.section_header i { background: #3466b3;
+  padding: 10px;
+  color: #fff;
+  margin-right: 10px;
+  border-radius: 15px; min-width: 55px; text-align: center; font-size:30px;}
+.section_header span { font-weight: 100; text-transform: capitalize;}
+section.fullwidth.social-links { margin-top: 0px; }
+section.fullwidth.social-links h2, section.fullwidth.social-links i { color: #efefef; }
+.sponsors_container { text-align: center; margin-bottom: 50px; }
+
+.sponsors_container img { display: block; max-width: 250px; max-height: 100px; height: auto; width: auto; margin: 15px 25px;}
+.sponsors_container .tint:after, .sponsors_container .tint:hover { background: none; }
+.sponsors_container .tint:hover:after { opacity: 1; }
+.sponsors_container .tint { display: inline-block !important; }
+/* #panelists, #startup_showcase_judges, #keynote_speakers, .bigdata_speakers, .companies_container { padding: 40px 100px 40px 100px } */
+#panelists .speaker_image img, #startup_showcase_judges .speaker_image img, #keynote_speakers .speaker_image img, .bigdata_speakers .speaker_image img { width: 100%; border-radius: 12px; border: 10px solid #666;}
+#panelists h2, #startup_showcase_judges h2, #keynote_speakers h2 { margin: 0 0 10px 0; font-weight: 300; font-size:35px;}
+#panelists .social_links, #startup_showcase_judges .social_links, #keynote_speakers .social_links, .bigdata_speakers .social_links { text-align: center; margin: 10px 0px; }
+#panelists .social_links i, #startup_showcase_judges .social_links i, #keynote_speakers .social_links i, .bigdata_speakers .social_links i, .slash_list i { background: #3466b3;
+  padding: 10px;
+  color: #fff;
+  margin-right: 5px;
+  border-radius: 15px; text-align: center; }
+#panelists .social_links i.fa-twitter, #startup_showcase_judges .social_links i.fa-twitter, #keynote_speakers .social_links i.fa-twitter, .bigdata_speakers .social_links i.fa-twitter { background: #00aced; }
+#panelists .social_links i.fa-twitter:hover, #startup_showcase_judges .social_links i.fa-twitter:hover, #keynote_speakers .social_links i.fa-twitter:hover, .bigdata_speakers .social_links i.fa-twitter:hover { background: #009BD6; }
+#panelists .social_links i.fa-linkedin, #startup_showcase_judges .social_links i.fa-linkedin, #keynote_speakers .social_links i.fa-linkedin, .bigdata_speakers .social_links i.fa-linkedin { background: #007bb6; }
+#panelists .social_links i.fa-linkedin:hover, #startup_showcase_judges .social_links i.fa-linkedin:hover, #keynote_speakers .social_links i.fa-linkedin:hover, .bigdata_speakers .social_links i.fa-linkedin:hover { background: #00699C; }
+
+.speaker_container { text-align: center; height: 300px; }
+.speaker_container .speaker_info { height: 80px; }
+.speaker_container img { border-radius: 55px; margin-bottom: 10px; width: 100%; }
+.speaker_container h4 { font-size: 15px; font-weight: normal; color: #4083ca; text-transform: capitalize; }
+.session_time { text-align: right; }
+.schedule_item_container { margin: 15px 0px; }
+.schedule_item_container h3, .presentation_item_container h3 { font-weight: 700; font-size: 16px; }
+.schedule_item_container .schedule_description, .presentation_item_container .schedule_description { font-size: 14px; line-height:18px;}
+.schedule_item_container .schedule_description p, .presentation_item_container .schedule_description p { padding: 5px 0px; margin: 0px;}
+.schedule_item_container h4.speaker, .presentation_item_container h4.speaker { color: #f5b022; font-weight: 500; font-size: 16px; margin-bottom: 10px; margin-top:5px; }
+.presentation_item_container { padding: 15px 0px; border-bottom: 1px solid #eee; }
+.slide_download { text-align: center; }
+.slide_download img { margin-bottom: 15px; width:100px; }
+.download_link { margin-bottom: 15px; }
+.companies_container .tint:after, .companies_container .tint:hover { background: none; }
+.companies_container .tint:hover:after { opacity: 1; }
+.companies_container .tint { display: inline-block !important; }
+.companies_container { text-align: center;}
+.companies_container img { height: 50px; margin: 25px; }
+#site-footer { padding: 15px 0px; }
+#site-footer .widgets { display: none; }
+
+.slash_list h3 { margin: 10px 0px; font-size: 20px; font-weight: 300;}
+.slash_list { padding: 40px 50px 40px 50px; }
+.slash_list td { padding: 10px 5px; }
+#tile_eventtimer .container { padding: 0px 100px; }
+.register_section h1 { font-weight: 700; background: rgba(255,255,255,0.5); padding: 25px 0px;}
+.register_section .countdown, .zerocountdown { background: rgba(0,0,0,0.7); border-radius: 30px; }
+.register_section section.fullwidth .countdown h4, .zerocountdown h4 { color: #ccc !important; }
+.register_section section.fullwidth .countdown span, .zerocountdown span { color: #fff !important; }
+.zerocountdown .time_circles > div { position: static; }
+.zerocountdown .textDiv { display: inline-block; width: 25%; margin: 30px 0px 50px 0px; }
+.zerocountdown .zeros { font-size: 51px;  line-height: 55px; font-weight: bold; color: #f5b022; font-family: 'Century Gothic', Arial; }
+.register_section section.fullwidth .zerocountdown h4 { font-size: 16px !important; text-transform: capitalize; font-family: 'Century Gothic', Arial; font-weight: normal; }
+#tile_eventtimer .section-button {
+  background: #3c81d5;
+  border-color: #3c81d5;
+  color: #fff; 
+  margin-bottom: 20px;
+}
+.wpb_tabs { margin: 0px 100px; }
+.no_p_padding .wpb_wrapper p { padding: 10px 0px; }
+header.header .site-logo, header.header.transparent.shrink .site-logo { margin-top: 10px !important; float: none !important; }
+.navbar-nav>li>a { text-transform: uppercase; padding-bottom: 10px; padding-top: 10px; }
+.navbar { margin: 10px 0 0 0; }
+.navbar-nav { float: none; margin: 0 auto; }
+.mobile-nav { display: none; }
+.scroll-top.in {
+  margin-bottom: 0;
+  opacity: 0.375;
+}
+.scroll-top.right {
+  right: 10px;
+  float: right;
+}
+.scroll-top {
+  position: fixed;
+  z-index: 1031;
+  bottom: 10px;
+  width: 35px;
+  height: 35px;
+  margin-bottom: -75px;
+  border: 2px solid #3466b3;
+  font-size: 25px;
+  line-height: 27px;
+  text-align: center;
+  color: #3466b3;
+  border-radius: 100%;
+  -webkit-transition: margin-bottom 0.6s ease,opacity 0.3s ease;
+  transition: margin-bottom 0.6s ease,opacity 0.3s ease;
+}
+
+.is-fixed { position: fixed; }
+.clearfix { clear: both; }
+
+blockquote {
+	text-align: justify;
+	border-left: none;
+	padding: 10px 0px !important;
+}
+
+@media (max-width: 1200px)
+{
+  .speaker_container img { border-radius: 35px; margin-bottom: 10px; width: 100%; }
+  #panelists, #startup_showcase_judges,  #keynote_speakers, .companies_container { padding: 40px 50px 40px 50px; }
+  .bigdata_speakers { padding: 40px 0px; }
+}
+
+@media (max-width: 992px)
+{
+  #tile_eventtimer .container { padding: 0px 10px; }
+  .slash_list { padding: 40px 0px; }
+  .speaker_container .speaker_info { height: 50px; }
+  .speaker_container { text-align: center; height: 350px; }
+}
+
+@media (max-width: 768px)
+{ 
+  .wpb_column.vc_column_container { padding-top: 1px; }
+  #panelists .speaker_image img, #startup_showcase_judges .speaker_image img, #keynote_speakers .speaker_image img, .bigdata_speakers .speaker_image img { width: 100%; }
+  #panelists, #startup_showcase_judges, #keynote_speakers { text-align: left; }
+  .slash_list { padding: 40px 0px; }
+  .slash_list table { margin: 0 auto; }
+  .slash_list table h3 { min-width: 250px; }
+  .session_time { text-align: left; }
+  .section_header { margin: 30px 50px 10px 50px; }
+  .wpb_wrapper p { padding: 10px 50px; }
+  .wpb_tabs { margin: 0px 50px; }
+  .wpb_tabs h2 { font-size: 30px; }
+  .bigdata_speakers { padding: 40px 100px; }
+  .speaker_container { text-align: center; height: 400px; }
+}
+
+@media (max-width: 680px)
+{
+  .register_section h1 { font-size: 30px; }
+  .companies_container .tint img { width: auto; }
+  .wpb_tabs h2 { font-size: 25px; }
+  .speaker_container { text-align: center; height: 350px; }
+  
+}
+
+@media (min-width: 600px) {
+  .is-fixed, header.header.shrink { position: fixed !important; }
+  .navbar { display: block !important; }
+}
+
+@media (max-width: 600px)
+{
+  header.header .site-logo, header.header.transparent.shrink .site-logo { float: left !important; }
+  .mobile-nav { display: block; float: right; }
+  .mobile-nav i {   font-size: 25px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 transparent,0 1px 5px rgba(0,0,0,0.25);
+  margin-top: 15px;
+  cursor: pointer;}
+  ul.navbar-nav li { display: block !important; }
+  .is-fixed, header.header.shrink { position: static !important; }
+  .navbar { display: none; }
+}
+
+@media (max-width: 500px)
+{
+  .speaker_container .speaker_info { height: 80px; }
+  .bigdata_speakers { padding: 40px 50px; }
+  .speaker_container { text-align: center; height: 300px; }
+  .wpb_tabs { margin: 0px 10px; }
+}
+
+@media (max-width: 400px)
+{
+  .mobile-nav i {   font-size: 20px; }
+}
+
+.finalist_section {
+	text-align:center;
+    margin-bottom: 50px;
+}
+.finalist_section .panelist {
+    display: inline-block !important;
+    width: 300px;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+/* custom */
+.sponsor1833 {
+	max-width: 500px;
+}
+
+
+.sponsor1764 {
+    max-width: 220px;
+    max-height: 200px;	
+}
+
+.sponsor1823 {
+	max-width: 140px;
+    max-height: 150px;
+}
+
+.sponsor1963 {
+	 max-width: 636px;
+    max-height: 460px;	
+}
