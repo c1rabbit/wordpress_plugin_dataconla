@@ -6,7 +6,8 @@ function vc_plugin_slash_list($atts, $content = null)
 {
   vc_map(array(
     "base"    => "slash_list",
-    "name"    => __("Slash List", "js_composer"),
+    "name"    => __("Slash List", "datadayla"),
+    "category" => __("Data Con LA", "datadayla"),    
     "class"    => "",
     "icon"      => "icon-wpb-message",
     "params"  => array(

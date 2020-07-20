@@ -1,14 +1,13 @@
 <?php
 
-add_action('vc_before_init', 'vc_plugin_past_attendees');
+add_action('vc_before_init', 'dataconla_vc_past_attendee');
 
-
-function vc_plugin_past_attendees($atts, $content = null)
+function dataconla_vc_past_attendee()
 {
-
   vc_map(array(
     "base"    => "past_attendees",
-    "name"    => __("Past Attendees List", "js_composer"),
+    "name"    => __("Past Attendees List", "datadayla"),
+    "category" => __("Data Con LA", "datadayla"),
     "class"    => "",
     "icon"      => "icon-wpb-message",
     "params"  => array(
@@ -21,16 +20,22 @@ function vc_plugin_past_attendees($atts, $content = null)
       ),
     ),
   ));
-  global $wp_query;
-  extract(shortcode_atts(array(
-    'width' => '1/2',
-    'el_class' => '',
-    'full_width' => '1',
-  ), $atts));
+}
 
-  if ($atts['level'] == 'all')
+add_shortcode('past_attendees', 'dataconla_vc_past_attendee_render');
+
+function dataconla_vc_past_attendee_render($atts, $content = null)
+{
+  global $wp_query;
+  // extract(shortcode_atts(array(
+  //   'width' => '1/2',
+  //   'el_class' => '',
+  //   'full_width' => '1',
+  // ), $atts));
+
+  if ($atts['level'] == 'all') {
     $args_posts = array('post_type' => 'attendee', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC');
-  else
+  } else {
     $args_posts = array(
       'post_type' => 'attendee',
       'tax_query' => array(
@@ -41,6 +46,7 @@ function vc_plugin_past_attendees($atts, $content = null)
         ),
       ), 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC'
     );
+  }
   $posts = new WP_Query($args_posts);
   $output = '<div class="companies_container">';
   if ($posts->have_posts()) {

@@ -6,7 +6,8 @@ function dataconla_vc_social_media()
 {
   vc_map(array(
     "base"    => "social_media",
-    "name"    => __("Social Media", "js_composer"),
+    "name"    => __("Social Media", "datadayla"),    
+    "category" => __("Data Con LA", "datadayla"),
     "class"    => "",
     "icon"      => "icon-wpb-message",
     "params"  => array(

@@ -1,6 +1,7 @@
 <?php
 
 add_action('vc_before_init', 'dataconla_vc_organizers_section');
+
 function dataconla_vc_organizers_section()
 {
   vc_map(array(
@@ -29,6 +30,7 @@ function dataconla_vc_organizers_section()
 }
 
 add_shortcode('organizers_section', 'vc_dataconla_organizers_section_render');
+
 function vc_dataconla_organizers_section_render($atts, $content = null)
 {
   global $wp_query;

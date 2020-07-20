@@ -7,7 +7,8 @@ function dataconla_vc_sponsor_section()
 {
   vc_map(array(
     "base"    => "sponsor_section",
-    "name"    => __("Sponsors Section", "js_composer"),
+    "name"    => __("Sponsors Section", "datadayla"),
+    "category" => __("Data Con LA", "datadayla"),
     "class"    => "",
     "icon"      => "icon-wpb-message",
     "params"  => array(
