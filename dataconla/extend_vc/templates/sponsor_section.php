@@ -1,11 +1,10 @@
 <?php
 
 
-add_action('vc_before_init', 'vc_theme_sponsor_section');
+add_action('vc_before_init', 'dataconla_vc_sponsor_section');
 
-function vc_theme_sponsor_section($atts, $content = null)
+function dataconla_vc_sponsor_section()
 {
-
   vc_map(array(
     "base"    => "sponsor_section",
     "name"    => __("Sponsors Section", "js_composer"),
@@ -61,16 +60,21 @@ function vc_theme_sponsor_section($atts, $content = null)
       ),
     ),
   ));
+}
 
+add_shortcode('organizers_section', 'vc_dataconla_sponsor_section_render');
+
+function vc_dataconla_sponsor_section_render($atts, $content = null)
+{
   global $wp_query;
   global $wpdb;
   $terms = $wpdb->get_results("SELECT * FROM wp_terms, wp_term_taxonomy WHERE wp_terms.term_id = wp_term_taxonomy.term_id AND wp_term_taxonomy.taxonomy = 'sponsor-tier'", OBJECT);
 
-  extract(shortcode_atts(array(
-    'width' => '1/2',
-    'el_class' => '',
-    'full_width' => '1',
-  ), $atts));
+  // extract(shortcode_atts(array(
+  //   'width' => '1/2',
+  //   'el_class' => '',
+  //   'full_width' => '1',
+  // ), $atts));
   $output = '<section id="tile_sponsors" class="fullwidth big-sponsors sticked schedule">';
   $output .= '<div id="tile_sponsors_anchor" class="hook"></div>';
   if (isset($atts['title']) || isset($atts['subtitle'])) {

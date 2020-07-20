@@ -1,8 +1,8 @@
 <?php
 
-add_action('vc_before_init', 'vc_theme_slash_list');
+add_action('vc_before_init', 'vc_plugin_slash_list');
 
-function vc_theme_slash_list($atts, $content = null)
+function vc_plugin_slash_list($atts, $content = null)
 {
   vc_map(array(
     "base"    => "slash_list",

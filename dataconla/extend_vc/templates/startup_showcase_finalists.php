@@ -1,7 +1,7 @@
 <?php
-add_action('vc_before_init', 'vc_theme_startup_showcase_finalists');
+add_action('vc_before_init', 'vc_plugin_startup_showcase_finalists');
 
-function vc_theme_startup_showcase_finalists($atts, $content = null)
+function vc_plugin_startup_showcase_finalists($atts, $content = null)
 {
   vc_map(array(
     "base"    => "startup_showcase_finalists",

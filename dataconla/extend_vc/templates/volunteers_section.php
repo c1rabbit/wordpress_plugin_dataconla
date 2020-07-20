@@ -1,8 +1,8 @@
 <?php
 
-add_action('vc_before_init', 'vc_theme_volunteers_section');
+add_action('vc_before_init', 'vc_plugin_volunteers_section');
 
-function vc_theme_volunteers_section($atts, $content = null)
+function vc_plugin_volunteers_section($atts, $content = null)
 {
 
   vc_map(array(
@@ -57,7 +57,7 @@ function vc_theme_volunteers_section($atts, $content = null)
     $linkedin = get('linked_in_link');
     $twitter = get('twitter_link');
     if ($twitter || $linkedin) {
-      $output .= '<div class="social_links">';
+      $output .= '<div class="datadayla_social_links">';
       if ($linkedin)
         $output .= '<a href="' . $linkedin . '" target="_blank"><i class="fa fa-linkedin"></i></a>';
 

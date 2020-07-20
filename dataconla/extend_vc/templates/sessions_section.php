@@ -1,8 +1,8 @@
 <?php
 
-add_action('vc_before_init', 'vc_theme_sessions_section');
+add_action('vc_before_init', 'vc_plugin_sessions_section');
 
-function vc_theme_sessions_section($atts, $content = null) {
+function vc_plugin_sessions_section($atts, $content = null) {
 	vc_map( array(
 		"base"		=> "sessions_section",
 		"name"		=> __("Sessions Section", "js_composer"),

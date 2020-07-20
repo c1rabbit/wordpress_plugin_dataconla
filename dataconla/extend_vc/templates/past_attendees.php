@@ -1,9 +1,9 @@
 <?php
 
-add_action('vc_before_init', 'vc_theme_past_attendees');
+add_action('vc_before_init', 'vc_plugin_past_attendees');
 
 
-function vc_theme_past_attendees($atts, $content = null)
+function vc_plugin_past_attendees($atts, $content = null)
 {
 
   vc_map(array(

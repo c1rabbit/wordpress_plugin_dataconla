@@ -1,8 +1,8 @@
 <?php
 
-add_action('vc_before_init', 'vc_theme_panelists');
+add_action('vc_before_init', 'vc_plugin_panelists');
 
-function vc_theme_panelists($atts, $content = null)
+function vc_plugin_panelists($atts, $content = null)
 {
   vc_map(array(
     "base"    => "panelists",
@@ -61,7 +61,7 @@ function vc_theme_panelists($atts, $content = null)
       $linkedin = get_post_meta(get_the_ID(), 'linkedin', true);
       $twitter = get_post_meta(get_the_ID(), 'twitter', true);
       if ($twitter || $linkedin) {
-        $output .= '<div class="social_links">';
+        $output .= '<div class="datadayla_social_links">';
         if ($linkedin)
           $output .= '<a href="' . $linkedin . '" target="_blank"><i class="fa fa-linkedin"></i></a>';
 

@@ -1,8 +1,8 @@
 <?php
 
-add_action('vc_before_init', 'vc_theme_section_header');
+add_action('vc_before_init', 'vc_plugin_section_header');
 
-function vc_theme_section_header($atts, $content = null)
+function vc_plugin_section_header($atts, $content = null)
 {
   vc_map(array(
     "base"    => "section_header",

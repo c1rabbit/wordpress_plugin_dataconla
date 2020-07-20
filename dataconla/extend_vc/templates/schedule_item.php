@@ -1,8 +1,8 @@
 <?php
 
-add_action('vc_before_init', 'vc_theme_schedule_item');
+add_action('vc_before_init', 'vc_plugin_schedule_item');
 
-function vc_theme_schedule_item($atts, $content = null)
+function vc_plugin_schedule_item($atts, $content = null)
 {
 
   vc_map(array(

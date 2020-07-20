@@ -1,12 +1,13 @@
 <?php
 
-add_action('vc_before_init', 'vc_theme_keynote_section');
+add_action('vc_before_init', 'vc_plugin_keynote_section');
 
-function vc_theme_keynote_section($atts, $content = null)
+function vc_plugin_keynote_section($atts, $content = null)
 {
   vc_map(array(
     "base"    => "keynote_section",
-    "name"    => __("Keynote Speakers Section", "js_composer"),
+    "name"    => __("Keynote Speakers Section", "datadayla"),
+    "category" => __("Data Con LA", "datadayla"),
     "class"    => "",
     "icon"      => "icon-wpb-message",
     "params"  => array(
@@ -61,7 +62,7 @@ function vc_theme_keynote_section($atts, $content = null)
       $linkedin = get_post_meta(get_the_ID(), 'linkedin', true);
       $twitter = get_post_meta(get_the_ID(), 'twitter', true);
       if ($twitter || $linkedin) {
-        $output .= '<div class="social_links">';
+        $output .= '<div class="datadayla_social_links">';
         if ($linkedin)
           $output .= '<a href="' . $linkedin . '" target="_blank"><i class="fa fa-linkedin"></i></a>';
 

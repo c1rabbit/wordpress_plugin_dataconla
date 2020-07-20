@@ -40,6 +40,8 @@ function dataconla_general_page()
 		<h2>Data Con LA Settings</h2>
 		<h3>ReadMe</h3>
 		<p>This is a plugin that migrated the features from the DataDayLA theme.</p>
+
+		<?php print_r( get_option( 'theme_options' ) ); ?>
 	</div>
 
 <?php
@@ -77,8 +79,8 @@ function wpse_load_plugin_css()
 {
 	$plugin_url = plugin_dir_url(__FILE__);
 
-	wp_enqueue_style('style1', $plugin_url . 'css/style.css');
-	wp_enqueue_style( 'style2', $plugin_url . 'css/font-awesome.min.css' );
-	wp_enqueue_style( 'style3', $plugin_url . 'css/bootstrap.min.css' );
+	wp_enqueue_style('style', $plugin_url . 'css/style.css');
+	wp_enqueue_style('font-awesome', $plugin_url . 'css/font-awesome.min.css');
+	wp_enqueue_style('bootstrap', $plugin_url . 'css/bootstrap.min.css');
 }
 add_action('wp_enqueue_scripts', 'wpse_load_plugin_css');

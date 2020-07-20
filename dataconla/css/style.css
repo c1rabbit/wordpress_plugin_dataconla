@@ -52,19 +52,24 @@ section.fullwidth.social-links h2, section.fullwidth.social-links i { color: #ef
 /* #panelists, #startup_showcase_judges, #keynote_speakers, .bigdata_speakers, .companies_container { padding: 40px 100px 40px 100px } */
 #panelists .speaker_image img, #startup_showcase_judges .speaker_image img, #keynote_speakers .speaker_image img, .bigdata_speakers .speaker_image img { width: 100%; border-radius: 12px; border: 10px solid #666;}
 #panelists h2, #startup_showcase_judges h2, #keynote_speakers h2 { margin: 0 0 10px 0; font-weight: 300; font-size:35px;}
-#panelists .social_links, #startup_showcase_judges .social_links, #keynote_speakers .social_links, .bigdata_speakers .social_links { text-align: center; margin: 10px 0px; }
-#panelists .social_links i, #startup_showcase_judges .social_links i, #keynote_speakers .social_links i, .bigdata_speakers .social_links i, .slash_list i { background: #3466b3;
+#panelists .datadayla_social_links, #startup_showcase_judges .datadayla_social_links, #keynote_speakers .datadayla_social_links, .bigdata_speakers .datadayla_social_links { text-align: center; margin: 10px 0px; }
+#panelists .datadayla_social_links i, #startup_showcase_judges .datadayla_social_links i, #keynote_speakers .datadayla_social_links i, .bigdata_speakers .datadayla_social_links i, .slash_list i { background: #3466b3;
   padding: 10px;
   color: #fff;
   margin-right: 5px;
   border-radius: 15px; text-align: center; }
-#panelists .social_links i.fa-twitter, #startup_showcase_judges .social_links i.fa-twitter, #keynote_speakers .social_links i.fa-twitter, .bigdata_speakers .social_links i.fa-twitter { background: #00aced; }
-#panelists .social_links i.fa-twitter:hover, #startup_showcase_judges .social_links i.fa-twitter:hover, #keynote_speakers .social_links i.fa-twitter:hover, .bigdata_speakers .social_links i.fa-twitter:hover { background: #009BD6; }
-#panelists .social_links i.fa-linkedin, #startup_showcase_judges .social_links i.fa-linkedin, #keynote_speakers .social_links i.fa-linkedin, .bigdata_speakers .social_links i.fa-linkedin { background: #007bb6; }
-#panelists .social_links i.fa-linkedin:hover, #startup_showcase_judges .social_links i.fa-linkedin:hover, #keynote_speakers .social_links i.fa-linkedin:hover, .bigdata_speakers .social_links i.fa-linkedin:hover { background: #00699C; }
+#panelists .datadayla_social_links i.fa-twitter, #startup_showcase_judges .datadayla_social_links i.fa-twitter, #keynote_speakers .datadayla_social_links i.fa-twitter, .bigdata_speakers .datadayla_social_links i.fa-twitter { background: #00aced; }
+#panelists .datadayla_social_links i.fa-twitter:hover, #startup_showcase_judges .datadayla_social_links i.fa-twitter:hover, #keynote_speakers .datadayla_social_links i.fa-twitter:hover, .bigdata_speakers .datadayla_social_links i.fa-twitter:hover { background: #009BD6; }
+#panelists .datadayla_social_links i.fa-linkedin, #startup_showcase_judges .datadayla_social_links i.fa-linkedin, #keynote_speakers .datadayla_social_links i.fa-linkedin, .bigdata_speakers .datadayla_social_links i.fa-linkedin { background: #007bb6; }
+#panelists .datadayla_social_links i.fa-linkedin:hover, #startup_showcase_judges .datadayla_social_links i.fa-linkedin:hover, #keynote_speakers .datadayla_social_links i.fa-linkedin:hover, .bigdata_speakers .datadayla_social_links i.fa-linkedin:hover { background: #00699C; }
 
-.speaker_container { text-align: center; height: 300px; }
-.speaker_container .speaker_info { height: 80px; }
+.speaker_container { 
+  text-align: center; 
+  margin-top:1em;
+  margin-bottom:1em;
+  /* height: 300px;  */
+}
+/* .speaker_container .speaker_info { height: 80px; } */
 .speaker_container img { border-radius: 55px; margin-bottom: 10px; width: 100%; }
 .speaker_container h4 { font-size: 15px; font-weight: normal; color: #4083ca; text-transform: capitalize; }
 .session_time { text-align: right; }
@@ -155,8 +160,8 @@ blockquote {
 {
   #tile_eventtimer .container { padding: 0px 10px; }
   .slash_list { padding: 40px 0px; }
-  .speaker_container .speaker_info { height: 50px; }
-  .speaker_container { text-align: center; height: 350px; }
+  /* .speaker_container .speaker_info { height: 50px; } */
+  /* .speaker_container { text-align: center; height: 350px; } */
 }
 
 @media (max-width: 768px)
@@ -173,7 +178,7 @@ blockquote {
   .wpb_tabs { margin: 0px 50px; }
   .wpb_tabs h2 { font-size: 30px; }
   .bigdata_speakers { padding: 40px 100px; }
-  .speaker_container { text-align: center; height: 400px; }
+  /* .speaker_container { text-align: center; height: 400px; } */
 }
 
 @media (max-width: 680px)
@@ -181,7 +186,7 @@ blockquote {
   .register_section h1 { font-size: 30px; }
   .companies_container .tint img { width: auto; }
   .wpb_tabs h2 { font-size: 25px; }
-  .speaker_container { text-align: center; height: 350px; }
+  /* .speaker_container { text-align: center; height: 350px; } */
   
 }
 
@@ -207,9 +212,9 @@ blockquote {
 
 @media (max-width: 500px)
 {
-  .speaker_container .speaker_info { height: 80px; }
+  /* .speaker_container .speaker_info { height: 80px; } */
   .bigdata_speakers { padding: 40px 50px; }
-  .speaker_container { text-align: center; height: 300px; }
+  /* .speaker_container { text-align: center; height: 300px; } */
   .wpb_tabs { margin: 0px 10px; }
 }
 
@@ -249,4 +254,15 @@ blockquote {
 .sponsor1963 {
 	 max-width: 636px;
     max-height: 460px;	
+}
+
+.speaker_info h3{
+  min-height:3.5em;
+  display: inline-flex;
+  align-items: center;
+}
+.speaker_info h4{
+  min-height:3em;
+  display: inline-flex;
+  align-items: center;
 }

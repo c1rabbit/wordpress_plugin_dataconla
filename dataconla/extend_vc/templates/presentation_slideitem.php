@@ -1,8 +1,8 @@
 <?php
 
-add_action('vc_before_init', 'vc_theme_presentation_slideitem');
+add_action('vc_before_init', 'vc_plugin_presentation_slideitem');
 
-function vc_theme_presentation_slideitem($atts, $content = null) {
+function vc_plugin_presentation_slideitem($atts, $content = null) {
   vc_map( array(
     "base"		=> "presentation_slideitem",
     "name"		=> __("Past Presentation Slide Item", "js_composer"),
