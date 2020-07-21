@@ -47,23 +47,25 @@ function dataconla_vc_section_header_render($atts, $content = null)
   //   'full_width' => '1',
   // ), $atts));
 
-  $output = '<table class="section_header">';
-  $output .= '<tr>';
-  $output .= '<td><i class="fa fa-';
+  $output = '<div class="section_header row">';
+  $output .= '<div style="display:inline-block">';
+  $output .= '<i class="fa fa-';
   if (isset($atts['icon']) && !empty($atts['icon'])) {
     $output .= $atts['icon'];
   } else {
     $output .= 'connectdevelop';
   }
 
-  $output .= '"></i></td>';
-  $output .= '<td><h2>';
+  $output .= '"></i>';
+  $output .= '</div>';
+  $output .= '<div style="display:inline-block">';
+  $output .= '<h2>';
   $output .= $atts['title'] ?? "";
   if (isset($atts['subtext']) && !empty($atts['subtext'])) {
     $output .= '<span class="subtext"> / ' . $atts['subtext'] . '</span>';
   }
-  $output .= '</h2></td>';
-  $output .= '</tr>';
-  $output .= '</table>';
+  $output .= '</h2>';
+  $output .= '</div>';
+  $output .= '</div>';
   return $output;
 }

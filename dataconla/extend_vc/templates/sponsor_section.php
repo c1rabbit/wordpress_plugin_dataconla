@@ -5,6 +5,54 @@ add_action('vc_before_init', 'dataconla_vc_sponsor_section');
 
 function dataconla_vc_sponsor_section()
 {
+  register_post_type('sponsor', array(
+    'labels' => array(
+      'name' => __('Sponsors', 'dxef'),
+      'singular_name' => __('Sponsor', 'dxef'),
+      'add_new' => __('Add New', 'dxef'),
+      'add_new_item' => __('Add New Sponsor', 'dxef'),
+      'edit_item' => __('Edit Sponsor', 'dxef'),
+      'new_item' => __('New Sponsor', 'dxef'),
+      'view_item' => __('View Sponsor', 'dxef'),
+      'search_items' => __('Search Sponsors', 'dxef'),
+      'not_found' => __('No Sponsors found', 'dxef'),
+      'not_found_in_trash' => __('No Sponsors found in trash', 'dxef'),
+      'menu_name' => __('Sponsors', 'dxef')
+    ),
+    'public' => true,
+    'show_ui' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'rewrite' => true,
+    'query_var' => false,
+    'show_in_rest' => true,
+    'supports' => array(
+      'title',
+      'editor',
+      'author',
+      'thumbnail'
+    )
+  ));
+  register_taxonomy('sponsor-tier', 'sponsor', array(
+    'hierarchical' => true,
+    'labels' => array(
+      'name' => __('Tiers', 'dxef'),
+      'singular_name' => __('Tier', 'dxef'),
+      'search_items' => __('Search Tiers', 'dxef'),
+      'all_items' => __('All Tiers', 'dxef'),
+      'parent_item' => __('Parent Tier', 'dxef'),
+      'parent_item_colon' => __('Parent Tier:', 'dxef'),
+      'edit_item' => __('Edit Tier', 'dxef'),
+      'update_item' => __('Update Tier', 'dxef'),
+      'add_new_item' => __('Add New Tier', 'dxef'),
+      'new_item_name' => __('New Tier', 'dxef'),
+      'menu_name' => __('Tiers', 'dxef')
+    ),
+    'show_in_rest' => true,
+    'query_var' => true,
+    'rewrite' => true
+  ));
+
   vc_map(array(
     "base"    => "sponsor_section",
     "name"    => __("Sponsors Section", "datadayla"),
@@ -63,7 +111,7 @@ function dataconla_vc_sponsor_section()
   ));
 }
 
-add_shortcode('organizers_section', 'vc_dataconla_sponsor_section_render');
+add_shortcode('sponsor_section', 'vc_dataconla_sponsor_section_render');
 
 function vc_dataconla_sponsor_section_render($atts, $content = null)
 {
@@ -88,10 +136,15 @@ function vc_dataconla_sponsor_section_render($atts, $content = null)
 
     // tiers sorting
     $new_tiers = array();
-    // foreach ($terms as $tier) {
-    //   $tier->order = EF_Taxonomy_Helper::ef_get_term_meta('sponsor-tier-metas', $tier->term_id, 'sponsor_tier_order');
-    //   $new_tiers[$tier->order] = $tier;
-    // }
+    foreach ($terms as $tier) {
+
+
+      $tier->order = $tier->term_id;
+      $new_tiers[$tier->order] = $tier;
+      // echo "<pre>";
+      // var_dump($tier);
+      // echo "</pre>";
+    }
     ksort($new_tiers, SORT_NUMERIC);
     $terms = $new_tiers;
     // -------------
@@ -118,6 +171,7 @@ function vc_dataconla_sponsor_section_render($atts, $content = null)
         'orderby' => 'title',
         'order' => 'ASC'
       ));
+
       if (count($sponsors) > 0) {
         $output .= '<div class="container">';
         $output .= '<div class="row section-content ">';
@@ -177,8 +231,9 @@ function vc_dataconla_sponsor_section_render($atts, $content = null)
   if (isset($atts['btn_link']) && !empty($atts['btn_link'])) {
     $output .= '<footer class="section-footer">';
     $output .= '<a href="' . $atts['btn_link'] . '" class="section-button" ';
-    if ($atts['new_window'] == 'yes')
+    if ($atts['new_window'] == 'yes') {
       $output .= 'target="_blank"';
+    }
     $output .= '>' . $atts['btn_text'] . '</a>';
     $output .= '</footer>';
   }

@@ -1,13 +1,13 @@
 <?php
 
-add_action('vc_before_init', 'vc_plugin_slash_list');
+add_action('vc_before_init', 'dataconla_vc_slash_list');
 
-function vc_plugin_slash_list($atts, $content = null)
+function dataconla_vc_slash_list()
 {
   vc_map(array(
     "base"    => "slash_list",
     "name"    => __("Slash List", "datadayla"),
-    "category" => __("Data Con LA", "datadayla"),    
+    "category" => __("Data Con LA", "datadayla"),
     "class"    => "",
     "icon"      => "icon-wpb-message",
     "params"  => array(
@@ -20,12 +20,17 @@ function vc_plugin_slash_list($atts, $content = null)
       ),
     ),
   ));
+}
 
-  extract(shortcode_atts(array(
-    'width' => '1/2',
-    'el_class' => '',
-    'full_width' => '1',
-  ), $atts));
+add_shortcode('slash_list', 'dataconla_vc_slash_list_render');
+
+function dataconla_vc_slash_list_render($atts, $content = null)
+{
+  // extract(shortcode_atts(array(
+  //   'width' => '1/2',
+  //   'el_class' => '',
+  //   'full_width' => '1',
+  // ), $atts));
   $list = explode(PHP_EOL, $atts['list']);
   $output = '<section class="slash_list">';
   $i = 0;
@@ -39,7 +44,7 @@ function vc_plugin_slash_list($atts, $content = null)
     $i++;
   }
   foreach ($columns as $column) {
-    $output .= '<div class="col-md-4 col-sm-4 col-xs-12">';
+    $output .= '<div class="col-md-4 col-sm-6 col-xs-12">';
     $output .= '<table>';
     foreach ($column as $list_item) {
       $output .= '<tr>';

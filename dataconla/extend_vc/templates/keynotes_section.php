@@ -62,16 +62,16 @@ function vc_dataconla_keynote_section_render($atts, $content = null)
       $output .= get_the_post_thumbnail(get_the_ID(), 'full');
       $linkedin = get_post_meta(get_the_ID(), 'linkedin', true);
       $twitter = get_post_meta(get_the_ID(), 'twitter', true);
-      // if ($twitter || $linkedin) {
-      $output .= '<div class="datadayla_social_links">';
-      if ($linkedin) {
-        $output .= '<a href="' . $linkedin . '" target="_blank"><i class="fa fa-linkedin"></i></a>';
+      if ($twitter || $linkedin) {
+        $output .= '<div class="datadayla_social_links">';
+        if ($linkedin) {
+          $output .= '<a href="' . $linkedin . '" target="_blank"><i class="fa fa-linkedin"></i></a>';
+        }
+        if ($twitter) {
+          $output .= '<a href="' . $twitter . '" target="_blank"><i class="fa fa-twitter"></i></a>';
+        }
+        $output .= '</div>';
       }
-      if ($twitter) {
-        $output .= '<a href="' . $twitter . '" target="_blank"><i class="fa fa-twitter"></i></a>';
-      }
-      $output .= '</div>';
-      // }
       $output .= '</div>';
       $output .= '<div class="col-md-9 col-sm-8 col-xs-12">';
     } else {

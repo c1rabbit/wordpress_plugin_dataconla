@@ -21,6 +21,8 @@ function dataconla_vc_startup_showcase_finalists()
   ));
 }
 
+add_shortcode('startup_showcase_finalists', 'vc_plugin_startup_showcase_finalists_render');
+
 function vc_plugin_startup_showcase_finalists_render($atts, $content = null)
 {
   global $wp_query;

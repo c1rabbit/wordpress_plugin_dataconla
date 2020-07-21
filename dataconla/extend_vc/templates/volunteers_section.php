@@ -1,6 +1,6 @@
 <?php
 
-add_action('vc_before_init', 'vc_plugin_volunteers_section');
+add_action('vc_before_init', 'dataconla_vc_volunteers_section');
 
 function dataconla_vc_volunteers_section()
 {
@@ -21,7 +21,8 @@ function dataconla_vc_volunteers_section()
   ));
 }
 
-add_shortcode('organizers_section', 'vc_plugin_volunteers_section_render');
+add_shortcode('volunteers_section', 'vc_plugin_volunteers_section_render');
+
 function vc_plugin_volunteers_section_render($atts, $content = null)
 {
   global $wp_query;

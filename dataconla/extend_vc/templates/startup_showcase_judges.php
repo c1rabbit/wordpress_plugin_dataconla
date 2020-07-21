@@ -20,7 +20,7 @@ function dataconla_vc_startup_showcase_judges()
   ));
 }
 
-add_shortcode('organizers_section', 'dataconla_vc_startup_showcase_judges_render');
+add_shortcode('startup_showcase_judges', 'dataconla_vc_startup_showcase_judges_render');
 
 function dataconla_vc_startup_showcase_judges_render($atts, $content = null)
 {
