@@ -81,6 +81,6 @@ function wpse_load_plugin_css()
 
 	wp_enqueue_style('style', $plugin_url . 'css/style.css');
 	wp_enqueue_style('font-awesome', $plugin_url . 'css/font-awesome.min.css');
-	wp_enqueue_style('bootstrap', $plugin_url . 'css/bootstrap.min.css');
+	wp_enqueue_style('bootstrap', $plugin_url . 'css/bootstrap-grid.min.css');
 }
 add_action('wp_enqueue_scripts', 'wpse_load_plugin_css');
