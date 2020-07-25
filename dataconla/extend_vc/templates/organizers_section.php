@@ -81,10 +81,10 @@ function vc_dataconla_organizers_section_render($atts, $content = null)
     }
     $output .= '<div class="speaker_info">';
     $output .= '<h3>' . get_the_title() . '</h3>';
-    $output .= '<h4>' . get('subtitle') . '</h4>';
+    $output .= '<h4>' . get_post_meta(get_the_ID(), "subtitle", true) . '</h4>';
     $output .= '</div>';
-    $linkedin = get('linked_in_link');
-    $twitter = get('twitter_link');
+    $linkedin = get_post_meta(get_the_ID(), "linked_in_link", true);
+    $twitter = get_post_meta(get_the_ID(), "twitter_link", true);
     // if ($twitter || $linkedin) {
     $output .= '<div class="datadayla_social_links">';
     if ($linkedin) {
