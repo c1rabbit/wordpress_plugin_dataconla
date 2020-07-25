@@ -1,13 +1,14 @@
 <?php
+$posts_with_relevant_year = array(
+  'organizer', 'speaker', 'sponsor', 'volunteer', 'panelists',
+  'attendee', 'startup_showcase', 'showcase_finalists'
+);
 add_action('init', 'register_custom_post_types');
 add_action('init', 'register_custom_taxonomies');
 
 function register_custom_taxonomies()
 {
-  $posts_with_relevant_year = array(
-    'organizer', 'speaker', 'sponsor', 'volunteer', 'panelists',
-    'attendee', 'startup_showcase', 'showcase_finalists'
-  );
+  global $posts_with_relevant_year;
   register_taxonomy('relevant_year', $posts_with_relevant_year, array(
     'hierarchical' => true,
     'labels' => array(
@@ -70,139 +71,24 @@ function register_custom_taxonomies()
 
 function register_custom_post_types()
 {
-  register_post_type('showcase_finalists', array(
-    'labels' => array(
-      'name' => __('Startup Showcase Finalists', 'dxef'),
-      'singular_name' => __('Startup Showcase Finalist', 'dxef'),
-      'add_new' => __('Add New Startup Showcase Finalist', 'dxef'),
-      'add_new_item' => __('Add New Startup Showcase Finalist', 'dxef'),
-      'edit_item' => __('Edit Startup Showcase Finalist', 'dxef'),
-      'new_item' => __('New Startup Showcase Finalist', 'dxef'),
-      'view_item' => __('View Startup Showcase Finalist', 'dxef'),
-      'search_items' => __('Search Startup Showcase Finalist', 'dxef'),
-      'not_found' => __('No Startup Showcase Finalist found', 'dxef'),
-      'not_found_in_trash' => __('No Startup Showcase Finalist found in trash', 'dxef'),
-      'menu_name' => __('Startup Showcase Finalists', 'dxef')
-    ),
-    'public' => true,
-    'show_ui' => true,
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'rewrite' => true,
-    'query_var' => false,
-    'show_in_rest' => true,
-    'supports' => array(
-      'title',
-      'editor',
-      'author',
-      'thumbnail',
-      'custom-fields'
-    )
-  ));
 
-  register_post_type('startup_showcase', array(
+  register_post_type('organizer', array(
     'labels' => array(
-      'name' => __('Startup Showcase Judges', 'dxef'),
-      'singular_name' => __('Startup Showcase Judge', 'dxef'),
-      'add_new' => __('Add Startup Showcase Judge', 'dxef'),
-      'add_new_item' => __('Add Startup Showcase Judge', 'dxef'),
-      'edit_item' => __('Edit Startup Showcase Judge', 'dxef'),
-      'new_item' => __('New Startup Showcase Judge', 'dxef'),
-      'view_item' => __('View Startup Showcase Judge', 'dxef'),
-      'search_items' => __('Search Startup Showcase Judge', 'dxef'),
-      'not_found' => __('No Startup Showcase Judge found', 'dxef'),
-      'not_found_in_trash' => __('No Startup Showcase Judge found in trash', 'dxef'),
-      'menu_name' => __('Startup Showcase Judges', 'dxef')
+      'name' => __('Organizers', 'dxef'),
+      'singular_name' => __('Organizer', 'dxef'),
+      'add_new' => __('Add New', 'dxef'),
+      'add_new_item' => __('Add New Organizer', 'dxef'),
+      'edit_item' => __('Edit Organizer', 'dxef'),
+      'new_item' => __('New Organizer', 'dxef'),
+      'view_item' => __('View Organizer', 'dxef'),
+      'search_items' => __('Search Organizer', 'dxef'),
+      'not_found' => __('No Organizer found', 'dxef'),
+      'not_found_in_trash' => __('No Organizer found in trash', 'dxef'),
+      'menu_name' => __('Organizers', 'dxef')
     ),
     'public' => true,
     'show_ui' => true,
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'rewrite' => true,
-    'query_var' => false,
-    'show_in_rest' => true,
-    'supports' => array(
-      'title',
-      'author',
-      'editor',
-      'thumbnail',
-      'custom-fields'
-    )
-  ));
-
-  register_post_type('attendee', array(
-    'labels' => array(
-      'name' => __('Past Attendees', 'dxef'),
-      'singular_name' => __('Past Attendee', 'dxef'),
-      'add_new' => __('Add Past Attendee', 'dxef'),
-      'add_new_item' => __('Add Past Attendee', 'dxef'),
-      'edit_item' => __('Edit Past Attendee', 'dxef'),
-      'new_item' => __('New Past Attendee', 'dxef'),
-      'view_item' => __('View Past Attendee', 'dxef'),
-      'search_items' => __('Search Past Attendee', 'dxef'),
-      'not_found' => __('No Past Attendee found', 'dxef'),
-      'not_found_in_trash' => __('No Past Attendee found in trash', 'dxef'),
-      'menu_name' => __('Past Attendees', 'dxef')
-    ),
-    'public' => true,
-    'show_ui' => true,
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'rewrite' => true,
-    'query_var' => false,
-    'show_in_rest' => true,
-    'supports' => array(
-      'title',
-      'thumbnail',
-      'custom-fields'
-    )
-  ));
-
-  register_post_type('panelists', array(
-    'labels' => array(
-      'name' => __('Panelists', 'dxef'),
-      'singular_name' => __('Panelist', 'dxef'),
-      'add_new' => __('Add New Panelist', 'dxef'),
-      'add_new_item' => __('Add New Panelist', 'dxef'),
-      'edit_item' => __('Edit Panelist', 'dxef'),
-      'new_item' => __('New Panelist', 'dxef'),
-      'view_item' => __('View Panelist', 'dxef'),
-      'search_items' => __('Search Panelist', 'dxef'),
-      'not_found' => __('No Panelist found', 'dxef'),
-      'not_found_in_trash' => __('No Panelist found in trash', 'dxef'),
-      'menu_name' => __('Panelists', 'dxef')
-    ),
-    'public' => true,
-    'show_ui' => true,
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'rewrite' => true,
-    'query_var' => false,
-    'show_in_rest' => true,
-    'supports' => array(
-      'title',
-      'editor',
-      'author',
-      'thumbnail',
-      'custom-fields'
-    )
-  ));
-
-  register_post_type('volunteer', array(
-    'labels' => array(
-      'name' => __('Volunteers', 'dxef'),
-      'singular_name' => __('Volunteer', 'dxef'),
-      'add_new_item' => __('Add New Volunteer', 'dxef'),
-      'edit_item' => __('Edit Volunteer', 'dxef'),
-      'new_item' => __('New Volunteer', 'dxef'),
-      'view_item' => __('View Volunteer', 'dxef'),
-      'search_items' => __('Search Volunteer', 'dxef'),
-      'not_found' => __('No Volunteer found', 'dxef'),
-      'not_found_in_trash' => __('No Volunteer found in trash', 'dxef'),
-      'menu_name' => __('Volunteers', 'dxef')
-    ),
-    'public' => true,
-    'show_ui' => true,
+    'show_in_menu' => 'dataconla',
     'capability_type' => 'post',
     'hierarchical' => false,
     'rewrite' => true,
@@ -231,6 +117,7 @@ function register_custom_post_types()
     ),
     'public' => true,
     'show_ui' => true,
+    'show_in_menu' => 'dataconla',
     'capability_type' => 'post',
     'hierarchical' => false,
     'rewrite' => true,
@@ -261,6 +148,7 @@ function register_custom_post_types()
     ),
     'public' => true,
     'show_ui' => true,
+    'show_in_menu' => 'dataconla',
     'capability_type' => 'post',
     'hierarchical' => false,
     'rewrite' => true,
@@ -275,22 +163,144 @@ function register_custom_post_types()
     )
   ));
 
-  register_post_type('organizer', array(
+  register_post_type('startup_showcase', array(
     'labels' => array(
-      'name' => __('Organizers', 'dxef'),
-      'singular_name' => __('Organizer', 'dxef'),
-      'add_new' => __('Add New', 'dxef'),
-      'add_new_item' => __('Add New Organizer', 'dxef'),
-      'edit_item' => __('Edit Organizer', 'dxef'),
-      'new_item' => __('New Organizer', 'dxef'),
-      'view_item' => __('View Organizer', 'dxef'),
-      'search_items' => __('Search Organizer', 'dxef'),
-      'not_found' => __('No Organizer found', 'dxef'),
-      'not_found_in_trash' => __('No Organizer found in trash', 'dxef'),
-      'menu_name' => __('Organizers', 'dxef')
+      'name' => __('Startup Showcase Judges', 'dxef'),
+      'singular_name' => __('Startup Showcase Judge', 'dxef'),
+      'add_new' => __('Add Startup Showcase Judge', 'dxef'),
+      'add_new_item' => __('Add Startup Showcase Judge', 'dxef'),
+      'edit_item' => __('Edit Startup Showcase Judge', 'dxef'),
+      'new_item' => __('New Startup Showcase Judge', 'dxef'),
+      'view_item' => __('View Startup Showcase Judge', 'dxef'),
+      'search_items' => __('Search Startup Showcase Judge', 'dxef'),
+      'not_found' => __('No Startup Showcase Judge found', 'dxef'),
+      'not_found_in_trash' => __('No Startup Showcase Judge found in trash', 'dxef'),
+      'menu_name' => __('Startup Showcase Judges', 'dxef')
     ),
     'public' => true,
     'show_ui' => true,
+    'show_in_menu' => 'dataconla',
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'rewrite' => true,
+    'query_var' => false,
+    'show_in_rest' => true,
+    'supports' => array(
+      'title',
+      'author',
+      'editor',
+      'thumbnail',
+      'custom-fields'
+    )
+  ));
+
+  register_post_type('showcase_finalists', array(
+    'labels' => array(
+      'name' => __('Startup Showcase Finalists', 'dxef'),
+      'singular_name' => __('Startup Showcase Finalist', 'dxef'),
+      'add_new' => __('Add New Startup Showcase Finalist', 'dxef'),
+      'add_new_item' => __('Add New Startup Showcase Finalist', 'dxef'),
+      'edit_item' => __('Edit Startup Showcase Finalist', 'dxef'),
+      'new_item' => __('New Startup Showcase Finalist', 'dxef'),
+      'view_item' => __('View Startup Showcase Finalist', 'dxef'),
+      'search_items' => __('Search Startup Showcase Finalist', 'dxef'),
+      'not_found' => __('No Startup Showcase Finalist found', 'dxef'),
+      'not_found_in_trash' => __('No Startup Showcase Finalist found in trash', 'dxef'),
+      'menu_name' => __('Startup Showcase Finalists', 'dxef')
+    ),
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => 'dataconla',
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'rewrite' => true,
+    'query_var' => false,
+    'show_in_rest' => true,
+    'supports' => array(
+      'title',
+      'editor',
+      'author',
+      'thumbnail',
+      'custom-fields'
+    )
+  ));
+
+  register_post_type('attendee', array(
+    'labels' => array(
+      'name' => __('Past Attendees', 'dxef'),
+      'singular_name' => __('Past Attendee', 'dxef'),
+      'add_new' => __('Add Past Attendee', 'dxef'),
+      'add_new_item' => __('Add Past Attendee', 'dxef'),
+      'edit_item' => __('Edit Past Attendee', 'dxef'),
+      'new_item' => __('New Past Attendee', 'dxef'),
+      'view_item' => __('View Past Attendee', 'dxef'),
+      'search_items' => __('Search Past Attendee', 'dxef'),
+      'not_found' => __('No Past Attendee found', 'dxef'),
+      'not_found_in_trash' => __('No Past Attendee found in trash', 'dxef'),
+      'menu_name' => __('Past Attendees', 'dxef')
+    ),
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => 'dataconla',
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'rewrite' => true,
+    'query_var' => false,
+    'show_in_rest' => true,
+    'supports' => array(
+      'title',
+      'thumbnail',
+      'custom-fields'
+    )
+  ));
+
+  register_post_type('panelists', array(
+    'labels' => array(
+      'name' => __('Panelists', 'dxef'),
+      'singular_name' => __('Panelist', 'dxef'),
+      'add_new' => __('Add New Panelist', 'dxef'),
+      'add_new_item' => __('Add New Panelist', 'dxef'),
+      'edit_item' => __('Edit Panelist', 'dxef'),
+      'new_item' => __('New Panelist', 'dxef'),
+      'view_item' => __('View Panelist', 'dxef'),
+      'search_items' => __('Search Panelist', 'dxef'),
+      'not_found' => __('No Panelist found', 'dxef'),
+      'not_found_in_trash' => __('No Panelist found in trash', 'dxef'),
+      'menu_name' => __('Panelists', 'dxef')
+    ),
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => 'dataconla',
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'rewrite' => true,
+    'query_var' => false,
+    'show_in_rest' => true,
+    'supports' => array(
+      'title',
+      'editor',
+      'author',
+      'thumbnail',
+      'custom-fields'
+    )
+  ));
+
+  register_post_type('volunteer', array(
+    'labels' => array(
+      'name' => __('Volunteers', 'dxef'),
+      'singular_name' => __('Volunteer', 'dxef'),
+      'add_new_item' => __('Add New Volunteer', 'dxef'),
+      'edit_item' => __('Edit Volunteer', 'dxef'),
+      'new_item' => __('New Volunteer', 'dxef'),
+      'view_item' => __('View Volunteer', 'dxef'),
+      'search_items' => __('Search Volunteer', 'dxef'),
+      'not_found' => __('No Volunteer found', 'dxef'),
+      'not_found_in_trash' => __('No Volunteer found in trash', 'dxef'),
+      'menu_name' => __('Volunteers', 'dxef')
+    ),
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => 'dataconla',
     'capability_type' => 'post',
     'hierarchical' => false,
     'rewrite' => true,
@@ -303,3 +313,39 @@ function register_custom_post_types()
     )
   ));
 }
+
+function filter_cars_by_taxonomies($post_type, $which)
+{
+  global $posts_with_relevant_year;
+
+  // Apply this only on a specific post type
+  if (!in_array($post_type, $posts_with_relevant_year))
+    return;
+
+  // A list of taxonomy slugs to filter by
+  $taxonomies = array('relevant_year');
+
+  foreach ($taxonomies as $taxonomy_slug) {
+
+    // Retrieve taxonomy data
+    $taxonomy_obj = get_taxonomy($taxonomy_slug);
+    $taxonomy_name = $taxonomy_obj->labels->name;
+
+    // Retrieve taxonomy terms
+    $terms = get_terms($taxonomy_slug);
+
+    // Display filter HTML
+    echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
+    echo '<option value="">' . sprintf(esc_html__('Show All %s', 'text_domain'), $taxonomy_name) . '</option>';
+    foreach ($terms as $term) {
+      printf(
+        '<option value="%1$s" %2$s>%3$s</option>',
+        $term->slug,
+        ((isset($_GET[$taxonomy_slug]) && ($_GET[$taxonomy_slug] == $term->slug)) ? ' selected="selected"' : ''),
+        $term->name
+      );
+    }
+    echo '</select>';
+  }
+}
+add_action('restrict_manage_posts', 'filter_cars_by_taxonomies', 10, 2);

@@ -30,52 +30,29 @@ add_action('admin_menu', 'dataconla__menu');
 
 function dataconla__menu()
 {
-	add_menu_page(__('DataConLA'), __('DataConLA'), 'edit_posts', 'dataconla', 'dataconla_general_page', null, 66);
-	add_submenu_page(__('dataconla'), __('Speakers'), __('Speakers'), 'edit_posts', 'dataconla_speakers', 'dataconla_speakers_page');
+	add_menu_page(__('DataConLA'), __('DataConLA'), 'edit_posts', 'dataconla', 'dataconla_general_page', 'dashicons-chart-area', 66);
+	add_submenu_page('dataconla', 'dataconla', 'DataConLA', 'edit_posts', 'dataconla_home', 'dataconla_general_page', 0);
 }
 
 function dataconla_general_page()
 {
 ?>
-
 	<div class="wrap">
 		<h2>Data Con LA Settings</h2>
 		<h3>ReadMe</h3>
-		<p>This is a plugin that migrated the features from the DataDayLA theme.</p>
+		<p>This is a plugin that migrated the features from the DataConLA theme.</p>
+		<ul>
+			<li>custom taxonomies</li>
+			<li>custom post types</li>
+			<li>magic fields plugin</li>
+			<li>WP Bakery shortcode</li>
+		</ul>
+		<a href="https://github.com/c1rabbit/wordpress_plugin_dataconla">GitHub Repo</a>
 
 		<?php print_r(get_option('theme_options')); ?>
 	</div>
-
 <?php
 }
-function dataconla_speakers_page()
-{
-	$default_tab = null;
-	$tab = isset($_GET['tab']) ? $_GET['tab'] : $default_tab;
-
-?>
-
-	<div class="wrap">
-		<h2>Data Con LA Speakers</h2>
-		<nav class="nav-tab-wrapper">
-			<?php
-			$active_year = date("Y");
-			for ($year = date("Y"); $year > 2015; $year--) {
-				$active_tab = $tab == $year ? "nav-tab-active" : '';
-				echo "<a href='?page=dataconla_speakers&tab={$year}' class='nav-tab {$active_tab}'>{$year}</a>";
-			}
-			?>
-		</nav>
-
-		<div class="tab-content">
-			<?php require plugin_dir_path(__FILE__) . 'speakers.php'; ?>
-		</div>
-	</div>
-
-<?php
-}
-
-require_once(plugin_dir_path(__FILE__) . "/DataConLA_List_Table.php");
 
 function wpse_load_plugin_css()
 {
