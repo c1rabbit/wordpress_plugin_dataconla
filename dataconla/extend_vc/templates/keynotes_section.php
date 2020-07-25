@@ -4,6 +4,7 @@ add_action('vc_before_init', 'dataconla_vc_keynote_section');
 
 function dataconla_vc_keynote_section()
 {
+  
   vc_map(array(
     "base"    => "keynote_section",
     "name"    => __("Keynote Speakers Section", "datadayla"),

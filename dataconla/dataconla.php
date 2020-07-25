@@ -19,6 +19,8 @@ if (!function_exists('add_action')) {
 	exit;
 }
 
+include_once plugin_dir_path(__FILE__) . 'register_custom_types.php';
+
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if (is_plugin_active('js_composer/js_composer.php')) {
 	include_once plugin_dir_path(__FILE__) . 'extend_vc/extendvc.php';
@@ -41,7 +43,7 @@ function dataconla_general_page()
 		<h3>ReadMe</h3>
 		<p>This is a plugin that migrated the features from the DataDayLA theme.</p>
 
-		<?php print_r( get_option( 'theme_options' ) ); ?>
+		<?php print_r(get_option('theme_options')); ?>
 	</div>
 
 <?php
