@@ -56,7 +56,7 @@ function vc_plugin_presentation_slideitem($atts, $content = null)
 
   $output = '<section class="presentation_item_container container-fluid">';
   $output .= '<div class="row-fluid">';
-  $output .= '<div class="col-md-3 col-sm-4 col-xs-12 slide_download">';
+  $output .= '<div class="col-md-3 col-sm-4 col-12 slide_download">';
   if ($atts['speaker'] != '') {
     $output .= '<h4 class="speaker">' . $atts['speaker'] . '</h4>';
   }
@@ -67,7 +67,7 @@ function vc_plugin_presentation_slideitem($atts, $content = null)
     $output .= '<a href="' . $atts['slide_link'] . '" target="_blank"><h3 class="download_link"><i class="fa fa-download"></i> Download Slides</h3></a>';
   }
   $output .= '</div>';
-  $output .= '<div class="col-md-9 col-sm-8 col-xs-12">';
+  $output .= '<div class="col-md-9 col-sm-8 col-12">';
   $output .= '<h3>' . $atts['title'] . '</h3>';
   $output .= '<div class="schedule_description">' . $atts['description'] . '</div>';
   $output .= '</div>';

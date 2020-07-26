@@ -51,7 +51,7 @@ function vc_plugin_startup_showcase_finalists_render($atts, $content = null)
   // echo "</pre>";
 
   $output = '<section id="startup_showcase_finalists">';
-  $output .= '<div class="finalist_section">';
+  $output .= '<div class="row">';
 
   while ($keynotes->have_posts()) {
     $keynotes->the_post();
@@ -59,7 +59,7 @@ function vc_plugin_startup_showcase_finalists_render($atts, $content = null)
     $link_url = get_post_meta(get_the_ID(), 'link_url', true);
 
     if (has_post_thumbnail()) {
-      $output .= '<div class="col-xs-6 col-sm-4 col-md-3" style="min-height:300px"><a href="' . $link_url . '" target="_blank" class="panelist" style="width:100%;">';
+      $output .= '<div class="col-6 col-sm-4 col-md-3" style="min-height:300px"><a href="' . $link_url . '" target="_blank" class="panelist" style="width:100%;">';
       $output .= get_the_post_thumbnail(get_the_ID(), 'full');
       $output .= '</a></div>';
     }

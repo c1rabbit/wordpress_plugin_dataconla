@@ -57,7 +57,7 @@ function vc_dataconla_panelist_section_render($atts, $content = null)
     $keynotes->the_post();
     $output .= '<div class="row">';
     if (has_post_thumbnail()) { // check if the post has a Post Thumbnail assigned to it.
-      $output .= '<div class="col-md-3 col-sm-4 col-xs-12 speaker_image">';
+      $output .= '<div class="col-md-3 col-sm-4 col-12 speaker_image">';
       $output .= get_the_post_thumbnail(get_the_ID(), 'full');
       $linkedin = get_post_meta(get_the_ID(), 'linkedin', true);
       $twitter = get_post_meta(get_the_ID(), 'twitter', true);
@@ -72,7 +72,7 @@ function vc_dataconla_panelist_section_render($atts, $content = null)
         $output .= '</div>';
       }
       $output .= '</div>';
-      $output .= '<div class="col-md-9 col-sm-8 col-xs-12">';
+      $output .= '<div class="col-md-9 col-sm-8 col-12">';
     } else {
       $output .= '<div class="col-md-12 speaker_section">';
     }

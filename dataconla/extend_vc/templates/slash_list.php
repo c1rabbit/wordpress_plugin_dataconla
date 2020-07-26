@@ -44,7 +44,7 @@ function dataconla_vc_slash_list_render($atts, $content = null)
     $i++;
   }
   foreach ($columns as $column) {
-    $output .= '<div class="col-md-4 col-sm-6 col-xs-12">';
+    $output .= '<div class="col-md-4 col-sm-6 col-12">';
     $output .= '<table>';
     foreach ($column as $list_item) {
       $output .= '<tr>';

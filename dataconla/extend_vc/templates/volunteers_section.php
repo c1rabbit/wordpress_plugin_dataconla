@@ -50,7 +50,7 @@ function vc_plugin_volunteers_section_render($atts, $content = null)
   $output .= '<div class="row">';
   while ($volunteers->have_posts()) {
     $volunteers->the_post();
-    $output .= '<div class="col-md-2 col-sm-4 col-xs-6 speaker_container">';
+    $output .= '<div class="col-md-2 col-sm-4 col-6 speaker_container">';
     if (has_post_thumbnail()) { // check if the post has a Post Thumbnail assigned to it.
       $output .= get_the_post_thumbnail(get_the_ID(), 'full');
     }
