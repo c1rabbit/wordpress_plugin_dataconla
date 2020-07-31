@@ -4,7 +4,7 @@ add_action('vc_before_init', 'dataconla_vc_keynote_section');
 
 function dataconla_vc_keynote_section()
 {
-  
+
   vc_map(array(
     "base"    => "keynote_section",
     "name"    => __("Keynote Speakers Section", "datadayla"),
@@ -80,6 +80,9 @@ function vc_dataconla_keynote_section_render($atts, $content = null)
     }
     $output .= '<h2 class="speaker_h2">' . get_the_title() . '</h2>';
     $output .= '<div class="speaker_content">';
+    if (!empty(trim(get_post_meta(get_the_ID(), 'speaker_title', true)))) {
+      $output .= '<strong>' . get_post_meta(get_the_ID(), 'speaker_title', true) . '</strong>';
+    }
     $output .= get_the_content();
     $output .= '</div>';
     $output .= '</div>';
