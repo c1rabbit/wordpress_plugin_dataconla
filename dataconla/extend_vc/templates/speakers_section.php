@@ -52,7 +52,7 @@ function vc_dataconla_speakers_render($atts, $content = null)
     $speakers->the_post();
     $keynote = get_post_meta(get_the_ID(), 'speaker_keynote', true);
     if (!$keynote) {
-      $output .= '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 speaker_container">';
+      $output .= '<div class="col-lg-2 col-md-3 col-sm-4 col-6 speaker_container">';
       if (has_post_thumbnail()) { // check if the post has a Post Thumbnail assigned to it.
 
         $output .= get_the_post_thumbnail(get_the_ID(), 'full');

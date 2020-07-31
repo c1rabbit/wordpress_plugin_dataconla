@@ -1,10 +1,9 @@
 <?php
 
-add_action('vc_before_init', 'vc_plugin_volunteers_section');
+add_action('vc_before_init', 'dataconla_vc_volunteers_section');
 
-function vc_plugin_volunteers_section($atts, $content = null)
+function dataconla_vc_volunteers_section()
 {
-
   vc_map(array(
     "base"    => "volunteers_section",
     "name"    => __("Volunteers Section", "js_composer"),
@@ -20,15 +19,20 @@ function vc_plugin_volunteers_section($atts, $content = null)
       ),
     ),
   ));
+}
 
+add_shortcode('volunteers_section', 'vc_plugin_volunteers_section_render');
+
+function vc_plugin_volunteers_section_render($atts, $content = null)
+{
   global $wp_query;
-  extract(shortcode_atts(array(
-    'width' => '1/2',
-    'el_class' => '',
-    'full_width' => '1',
-  ), $atts));
-  $output = "";
-  $output .= '<section class="container bigdata_speakers">';
+  // extract(shortcode_atts(array(
+  //   'width' => '1/2',
+  //   'el_class' => '',
+  //   'full_width' => '1',
+  // ), $atts));
+
+  $output = '<section class="bigdata_speakers">';
   $volunteers = new WP_Query(array(
     'post_type' => 'volunteer',
     'tax_query' => array(
@@ -42,28 +46,28 @@ function vc_plugin_volunteers_section($atts, $content = null)
     'orderby' => 'title',
     'order' => 'ASC'
   ));
+
   $output .= '<div class="row">';
   while ($volunteers->have_posts()) {
     $volunteers->the_post();
-    $output .= '<div class="col-md-2 col-sm-4 col-xs-6 speaker_container">';
+    $output .= '<div class="col-md-2 col-sm-4 col-6 speaker_container">';
     if (has_post_thumbnail()) { // check if the post has a Post Thumbnail assigned to it.
-
       $output .= get_the_post_thumbnail(get_the_ID(), 'full');
     }
     $output .= '<div class="speaker_info">';
     $output .= '<h3>' . get_the_title() . '</h3>';
-    $output .= '<h4>' . get('subtitle') . '</h4>';
+    $output .= '<h4>' .  get_post_meta(get_the_ID(), "subtitle", true) . '</h4>';
     $output .= '</div>';
-    $linkedin = get('linked_in_link');
-    $twitter = get('twitter_link');
+    $linkedin = get_post_meta(get_the_ID(), "linked_in_link", true);
+    $twitter = get_post_meta(get_the_ID(), "twitter_link", true);
     if ($twitter || $linkedin) {
       $output .= '<div class="datadayla_social_links">';
-      if ($linkedin)
+      if ($linkedin) {
         $output .= '<a href="' . $linkedin . '" target="_blank"><i class="fa fa-linkedin"></i></a>';
-
-      if ($twitter)
+      }
+      if ($twitter) {
         $output .= '<a href="' . $twitter . '" target="_blank"><i class="fa fa-twitter"></i></a>';
-
+      }
       $output .= '</div>';
     }
     $output .= '</div>';

@@ -29,9 +29,7 @@ header.header.fat { padding: 5px 0px !important; }
   border-radius: 15px;}
 .sponsor_tier .col-md-12 { padding: 0px; }
 .section_header { 
-  margin-top:1em;
-  border:0;
-  /* margin: 30px 100px 10px 100px;  */
+  margin: 30px 100px 10px 100px; 
 }
 .section_header td{border:0;}
 .section_header h2{ font-size:30px; margin: 0px;}
@@ -266,3 +264,9 @@ blockquote {
   display: inline-flex;
   align-items: center;
 }
+
+.speaker_content blockquote{
+  border-left: none;
+  margin-left: 0;
+}
+

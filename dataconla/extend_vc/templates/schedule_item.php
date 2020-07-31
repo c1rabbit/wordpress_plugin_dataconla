@@ -56,10 +56,10 @@ function vc_plugin_schedule_item($atts, $content = null)
   ), $atts));
   $output = '<section class="schedule_item_container container-fluid">';
   $output .= '<div class="row-fluid">';
-  $output .= '<div class="col-md-3 col-sm-4 col-xs-12">';
+  $output .= '<div class="col-md-3 col-sm-4 col-12">';
   $output .= '<h3 class="session_time">' . $atts['time'] . '</h3>';
   $output .= '</div>';
-  $output .= '<div class="col-md-9 col-sm-8 col-xs-12">';
+  $output .= '<div class="col-md-9 col-sm-8 col-12">';
   $output .= '<h3>' . $atts['title'] . '</h3>';
   if ($atts['speaker'] != '')
     $output .= '<h4 class="speaker">by ' . $atts['speaker'] . '</h4>';

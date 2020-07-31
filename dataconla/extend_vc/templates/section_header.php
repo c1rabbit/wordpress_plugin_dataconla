@@ -1,12 +1,13 @@
 <?php
 
-add_action('vc_before_init', 'vc_plugin_section_header');
+add_action('vc_before_init', 'dataconla_vc_section_header');
 
-function vc_plugin_section_header($atts, $content = null)
+function dataconla_vc_section_header()
 {
   vc_map(array(
     "base"    => "section_header",
-    "name"    => __("Section Header with Icon", "js_composer"),
+    "name"    => __("Section Header with Icon", "datadayla"),
+    "category" => __("Data Con LA", "datadayla"),
     "class"    => "",
     "icon"      => "icon-wpb-message",
     "params"  => array(
@@ -33,30 +34,38 @@ function vc_plugin_section_header($atts, $content = null)
       ),
     ),
   ));
+}
 
+add_shortcode('section_header', 'dataconla_vc_section_header_render');
+
+function dataconla_vc_section_header_render($atts, $content = null)
+{
   global $wp_query;
-  extract(shortcode_atts(array(
-    'width' => '1/2',
-    'el_class' => '',
-    'full_width' => '1',
-  ), $atts));
+  // extract(shortcode_atts(array(
+  //   'width' => '1/2',
+  //   'el_class' => '',
+  //   'full_width' => '1',
+  // ), $atts));
 
-  $output = "";
-  $output .= '<table class="section_header">';
-  $output .= '<tr>';
-  $output .= '<td><i class="fa fa-';
-  if (isset($atts['icon']) && !empty($atts['icon']))
+  $output = '<div class="section_header row">';
+  $output .= '<div style="display:inline-block">';
+  $output .= '<i class="fa fa-';
+  if (isset($atts['icon']) && !empty($atts['icon'])) {
     $output .= $atts['icon'];
-  else
+  } else {
     $output .= 'connectdevelop';
+  }
 
-  $output .= '"></i></td>';
-  $output .= '<td><h2>';
+  $output .= '"></i>';
+  $output .= '</div>';
+  $output .= '<div style="display:inline-block">';
+  $output .= '<h2>';
   $output .= $atts['title'] ?? "";
-  if (isset($atts['subtext']) && !empty($atts['subtext']))
+  if (isset($atts['subtext']) && !empty($atts['subtext'])) {
     $output .= '<span class="subtext"> / ' . $atts['subtext'] . '</span>';
-  $output .= '</h2></td>';
-  $output .= '</tr>';
-  $output .= '</table>';
+  }
+  $output .= '</h2>';
+  $output .= '</div>';
+  $output .= '</div>';
   return $output;
 }
